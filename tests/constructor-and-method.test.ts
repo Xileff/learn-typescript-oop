@@ -13,6 +13,7 @@ describe('Customer', () => {
     customer.age = 22;
     expect(customer).toHaveProperty('age');
     expect(customer.age).toBe(22);
+    expect(customer.age).toBe(22);
   });
 
   it('should be able to call method', () => {
