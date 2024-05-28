@@ -7,6 +7,10 @@ class Customer {
     this.id = id;
     this.name = name;
   }
+
+  sayHello(name: string): string {
+    return `Hello ${name}, my name is ${this.name}`;
+  }
 }
 
 export default Customer;

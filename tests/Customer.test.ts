@@ -14,4 +14,13 @@ describe('Customer', () => {
     expect(customer).toHaveProperty('age');
     expect(customer.age).toBe(22);
   });
+
+  it('should be able to call method', () => {
+    const customer: Customer = new Customer(1, 'Felix');
+    expect(customer).toHaveProperty('sayHello');
+    expect(customer.sayHello).toBeInstanceOf(Function);
+    expect(customer.sayHello('Vincent')).toEqual(
+      'Hello Vincent, my name is Felix',
+    );
+  });
 });
