@@ -7,6 +7,10 @@ class Employee extends Person {
     super(name);
     this.department = department;
   }
+
+  sayHello(name: string): string {
+    return `Hello ${name}, I am an employee of the ${this.department} department.`;
+  }
 }
 
 export default Employee;
