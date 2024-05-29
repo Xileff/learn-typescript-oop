@@ -1,8 +1,11 @@
-class Employee {
-  name: string;
+import Person from './Person';
 
-  constructor(name: string) {
-    this.name = name;
+class Employee extends Person {
+  department: string;
+
+  constructor(name: string, department: string) {
+    super(name);
+    this.department = department;
   }
 }
 
