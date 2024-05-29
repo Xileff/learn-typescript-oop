@@ -1,5 +1,5 @@
 interface HasName {
-  _name: string;
+  name: string;
 }
 
 export default HasName;
