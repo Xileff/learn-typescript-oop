@@ -29,4 +29,33 @@ describe('Polymorphism', () => {
     expect(isHaveName(director)).toBe(true);
     expect(isCanSayHello(director)).toBe(true);
   });
+
+  it('should support type casting', () => {
+    function introduction(employee: Employee) {
+      if (employee instanceof Director) {
+        const director = employee as Director; // type assertion
+        return `My name is ${director.name}, and I am a director.`;
+      } else if (employee instanceof Manager) {
+        const manager = employee as Manager;
+        return `My name is ${manager.name}, and I am a manager.`;
+      } else {
+        return `My name is ${employee.name}, and I am an employee.`;
+      }
+    }
+
+    let employee: Employee = new Employee('Felix', 'BE');
+    expect(introduction(employee)).toBe(
+      'My name is Felix, and I am an employee.',
+    );
+
+    employee = new Manager('Felix', 'BE');
+    expect(introduction(employee)).toBe(
+      'My name is Felix, and I am a manager.',
+    );
+
+    employee = new Director('Felix', 'BE');
+    expect(introduction(employee)).toBe(
+      'My name is Felix, and I am a director.',
+    );
+  });
 });
